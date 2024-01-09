@@ -1,4 +1,4 @@
-This Repository will hold tricke tasks thatI didi to show my skills.
+This Repository will hold pet projects that I did to show my skills.
 
 Please feel free to read them.
 
