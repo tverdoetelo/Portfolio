@@ -7,18 +7,18 @@ order by 1,2
 
 -- Looking at Total Cases vs Population
 -- Shows what percentage of population got covid in your country
-Select location, date, population, total_cases, (total_cases/population)*100 as PercentagePopelationInfected
+Select location, date, population, total_cases, (total_cases/population)*100 as PercentagePopulationInfected
 From PortfolioProject1..CovidDeaths
 Where location like '%germany%'
 order by 1,2
 
 -- Looking at Countries with Highest Infection Rate compared to Population
 -- Shows what percentage of population got covid in your country
-Select location, population, MAX(total_cases) as  HighestInfectionCount, MAX(total_cases/population)*100 as PercentagePopelationInfected
+Select location, population, MAX(total_cases) as  HighestInfectionCount, MAX(total_cases/population)*100 as PercentagePopulationInfected
 From PortfolioProject1..CovidDeaths
 Where continent is not NULL
 Group by location, population
-order by PercentagePopelationInfected desc
+order by PercentagePopulationInfected desc
 
 --Showing Countries with Highest Death Count per Population
 Select location, MAX(cast(total_deaths as int)) as  TotalDeathCount
