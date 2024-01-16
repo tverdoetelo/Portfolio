@@ -16,7 +16,7 @@ Where continent is not NULL
 order by 1,2
 
 -- Looking at Total Cases vs Total Deaths
--- Shows likelihood of deying if you contract covid in your country
+-- Shows likelihood of dying if you contract covid in your country
 Select location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProject1..CovidDeaths
 Where location like '%germany%'
@@ -48,6 +48,7 @@ order by TotalDeathCount desc
 Select location, MAX(cast(total_deaths as int)) as  TotalDeathCount
 From PortfolioProject1..CovidDeaths
 Where continent is NULL
+and location not in ('World', 'European Union', 'International')
 Group by location
 order by TotalDeathCount desc
 
