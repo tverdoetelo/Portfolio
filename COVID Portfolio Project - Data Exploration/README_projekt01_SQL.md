@@ -32,5 +32,5 @@
 >>Total Population vs Vaccinations.
 
 **Conclusion:**
->Important parameters describing the COVID pandemic were calculated using SQL.
+>Important parameters describing the COVID pandemie were calculated using SQL.
 >This data was used to find important patterns that can be evaluated for assessing disease risks, treatment effectiveness, isolation effectiveness, etc.
