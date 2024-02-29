@@ -2,7 +2,7 @@
 ### COVID Data Visualisation on Dashboard
 
 **The main idea:**
->find the most important numbers and trends during COVID pandemy and visualise them.
+>To find the most important numbers and trends during COVID pandemia and to visualise them.
 
 **Tasks:**
 >Selection of required data for demonstration.
@@ -33,8 +33,10 @@
 All visualisations has neiutral character of design to avoid unpleasant emotions of the audience.
 
 **Conclusion:**
->Important parameters describing the COVID pandemiie were selected and calculated using SQL. 
+>Important parameters describing the COVID pandemia were selected and calculated using SQL.
+>
 >After that, this data was used for creating Daschboard with Tableau.
+>
 >This visualisation may be used to find important patterns that can be evaluated for assessing disease risks, treatment effectiveness, isolation effectiveness, etc.
 
 Online version: https://public.tableau.com/app/profile/karina.dome
