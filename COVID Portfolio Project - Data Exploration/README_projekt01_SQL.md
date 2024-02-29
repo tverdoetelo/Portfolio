@@ -2,7 +2,7 @@
 ### COVID Data Exploration
 
 **The main idea:**
->find the most important numbers and trends during COVID pandemy.
+>To find the most important numbers and trends during COVID pandemia.
 
 **Tasks:**
 >Selection of required data for analysis
@@ -32,5 +32,5 @@
 >>Total Population vs Vaccinations.
 
 **Conclusion:**
->Important parameters describing the COVID pandemie were calculated using SQL.
+>Important parameters describing the COVID pandemia were calculated using SQL.
 >This data was used to find important patterns that can be evaluated for assessing disease risks, treatment effectiveness, isolation effectiveness, etc.
