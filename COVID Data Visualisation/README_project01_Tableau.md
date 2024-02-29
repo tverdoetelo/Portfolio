@@ -17,6 +17,8 @@
 >Also continental distribution of deaths was selected.
 >
 >The latest important selected data were the time and country distribution of infected people.
+>
+>Selected data for each visualization was exported to Excel
 
 **Combination of all visualisation materials for dashboard:**
 >For global numbers was created a basic table.
