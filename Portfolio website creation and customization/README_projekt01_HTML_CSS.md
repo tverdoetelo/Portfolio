@@ -12,7 +12,7 @@
 >Selecting and setting hosting.
 
 **Selection of template:**
->This was my first experience with html, so to simplify the task I used [HTML5UP - resource with ready-made templates](https://html5up.net/)
+>This was my first experience with HTML & CSS, so to simplify the task I used [HTML5UP - resource with ready-made templates](https://html5up.net/)
 >It has many different stylish templates.
 >
 >I totally recommend it!
