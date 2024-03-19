@@ -7,9 +7,9 @@
 **Tasks:**
 >Selection of suitable template to minimize resource requirements (energy and time).
 >
->Customisation (adding suitable sections, titles, subtitles, descriptions, pictures, links)
+>Customisation (adding suitable sections, titles, subtitles, descriptions, pictures, links).
 >
->fghjkl;fghjkl.
+>Selecting and setting hosting.
 
 **Selection of template:**
 >This was my first experience with html, so to simplify the task I used [HTML5UP - resource with ready-made templates](https://html5up.net/)
@@ -25,9 +25,11 @@
 >>
 >>In the end, I supported all the information with buttons and links under headers, buttons and pictures.
 
-**Customisation:**
->[GitHub Pages](https://pages.github.com/).
+**Selecting and setting hosting for website:**
+>[GitHub Pages](https://pages.github.com/) is very useful service that hosted directly from GitHub repository.
+>My GitHub Pages site was built from the main branch and was deployed to the github-pages environment by the pages build and deployment workflow.
+>Link: https://tverdoetelo.github.io/PortfolioWebsite.github.io/
 
 **Conclusion:**
->This site was built using Visual Sttudio Code, Life Server, [HTML5UP resource with ready-made templates](https://html5up.net/) and [GitHub Pages](https://pages.github.com/).
+>[This portfolio site](https://tverdoetelo.github.io/PortfolioWebsite.github.io/) was built using Visual Sttudio Code, Life Server, [HTML5UP resource with ready-made templates](https://html5up.net/) and [GitHub Pages](https://pages.github.com/).
 >This website is useful to share information about me and my skills.
