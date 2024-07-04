@@ -40,9 +40,6 @@ plt.show()
 df = df.loc[df['gross'] > 0] 
 # print(df.info())
 
-#Ordering data
-df.sort_values(by=['gross'], inplace=False, ascending=False)
-
 #Drawing scatter plot: budget & gross / scores & gross earning correlation
 
 def scatter_plot(columns,col1,col2,title,xname,yname,name): #Creating scatter plot
