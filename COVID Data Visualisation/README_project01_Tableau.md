@@ -25,7 +25,7 @@
 >
 >For continental distribution of deaths was created a bar chart.
 >
->Information about the time and country distribution of infected people was divided for 2 visualisations:
+>Information about the time and country distribution of infected people was divided into 2 visualisations:
 >>First of them is a map.
 >>
 >>The second one is a graph, that was improved with some predictions about the number of infected people on the most intresting for me countries.
