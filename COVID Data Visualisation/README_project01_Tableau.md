@@ -30,7 +30,7 @@
 >>
 >>The second one is a graph, that was improved with some predictions about the number of infected people on the most intresting for me countries.
 >>These countries are near each other, so they can affect each other or may have similar patterns.
-All visualisations has neiutral character of design to avoid unpleasant emotions of the audience.
+All visualisations has neutral character of design to avoid unpleasant emotions of the audience.
 
 **Conclusion:**
 >Important parameters describing the COVID pandemia were selected and calculated using SQL.
