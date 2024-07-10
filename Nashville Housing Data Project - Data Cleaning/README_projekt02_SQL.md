@@ -7,7 +7,7 @@
 **Tasks:**
 >Analysis of original data.
 >
->Data harmonization/
+>Data harmonization.
 >
 >Cleaning and optimisation addresses.
 
