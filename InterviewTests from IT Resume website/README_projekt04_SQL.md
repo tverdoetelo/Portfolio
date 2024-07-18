@@ -18,7 +18,7 @@
 >>
 >>where (s.id = 5 and created_at > '10.10.2021'::date)
 
-**2. Test Tinkoff] Undeclared customers**
+**2. [Test Tinkoff] Undeclared customers**
 >
 >The following table structure is given:
 >
@@ -46,3 +46,27 @@
 >>join tinkoff.calls cl on c.customer_id = cl.customer_id
 >>
 >>where (start_dttm = '05.29.2019'::date and duration = 0)
+>>
+**3. Find counties where there were no purchases**
+>
+>The following table structure is given:
+>
+>![image](https://github.com/user-attachments/assets/5526b9fc-6bc0-4252-aa85-08317164631e)
+>
+>Task:
+>>It is necessary to find the names of all districts, which residents have never made a purchase in this store.
+>>
+>>Columns as a result
+>>>name 
+>
+>Solution:
+>>select c.name
+>>
+>>from county c
+>>
+>>left join customer cr on c.county_code = cr.county_code
+>>
+>>left join c_orders o on cr.id_customer = o.id_customer
+>>
+>>where o.id_orders is null
+
