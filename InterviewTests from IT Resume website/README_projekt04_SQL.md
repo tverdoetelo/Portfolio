@@ -155,3 +155,60 @@
 >>
 >>      order by t.customer_id
 
+**6. [Tinkoff] Transaction more than the previous one and next**
+>
+>The following table is given:
+>
+>>Table TRANSACTION_TIN:
+>>
+| Column | Data type | Description |
+|--- | ---| ---|
+| transaction_id | int | Transaction ID |
+| customer_id | int | Client ID |
+| amount_rur | float | Transaction amount in Russian rubles |
+| transaction_dttm | datetime | Date and time of transaction |
+| success_flg | bool | Successful transaction flag (TRUE) |
+>>
+>>The tables are in interview.ACCOUNT_TIN.
+>
+>Task:
+>>Pull all transactions that are larger than the previous and subsequent transaction for this client.
+>>
+>>Note:
+>>
+>>We only consider successful transactions.
+>>
+>>Columns as a result
+>>>transaction_id
+>>>
+>>>customer_id
+>
+>Solution:
+>>      with task as (
+>>
+>>                     select *,
+>>
+>>                           lag(amount_rur) over (partition by customer_id
+>>
+>>                                                 order by transaction_dttm
+>>
+>>                                                                          ) as lag_amount,
+>>
+>>                           lead(amount_rur) over (partition by customer_id
+>>
+>>                                                  order by transaction_dttm
+>>
+>>                                                                        ) as lead_amount
+>>
+>>                    from interview.TRANSACTION_TIN
+>>
+>>                    where success_flg IS TRUE
+>>
+>>                                              )
+>>
+>>         select transaction_id, customer_id
+>>
+>>         from task
+>>
+>>         where amount_rur > lag_amount and amount_rur > lead_amount
+                                      
