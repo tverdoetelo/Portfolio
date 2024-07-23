@@ -11,11 +11,8 @@
 >
 >Solution:
 >>      select count(created_at)
->>
 >>      from Purchases p
->>
 >>      join skus s on s.id = p.sku_id
->>
 >>      where (s.id = 5 and created_at > '10.10.2021'::date)
 
 **2. [Test Tinkoff] Undeclared customers**
@@ -40,11 +37,8 @@
 >
 >Solution:
 >>      select start_dttm as date, last_nm, first_nm, middle_nm
->>
 >>      from tinkoff.customers c
->>
 >>      join tinkoff.calls cl on c.customer_id = cl.customer_id
->>
 >>      where (start_dttm = '05.29.2019'::date and duration = 0)
 >>
 **3. Find counties where there were no purchases**
@@ -61,13 +55,9 @@
 >
 >Solution:
 >>      select c.name
->>
 >>      from county c
->>
 >>      left join customer cr on c.county_code = cr.county_code
->>
 >>      left join c_orders o on cr.id_customer = o.id_customer
->>
 >>      where o.id_orders is null
 
 **4. [Tinkoff] Successful transactions**
@@ -95,19 +85,12 @@
 >
 >Solution:
 >>      select customer_id, amount_rur
->>
 >>      from interview.TRANSACTION_TIN
->>
 >>      where success_flg is TRUE and customer_id in (
->>
 >>                                                    select customer_id
->>
 >>                                                    from interview.TRANSACTION_TIN
->>
 >>                                                    group by customer_id
->>
 >>                                                    having sum(amount_rur) > 100000)
->>
 >>      order by customer_id
 >> 
 **5. [Tinkoff] First transaction**
@@ -144,15 +127,10 @@
 >
 >Solution:
 >>      select t.customer_id, min(t.transaction_dttm) as transaction_dt
->>
 >>      from interview.TRANSACTION_TIN t
->>
 >>      join interview.CUSTOMER_TIN c on t.customer_id = c.customer_id
->>
 >>      where extract(year from c.start_dttm) = 2023 and t.success_flg is TRUE
->>
 >>      group by t.customer_id
->>
 >>      order by t.customer_id
 
 **6. [Tinkoff] Transaction more than the previous one and next**
@@ -185,30 +163,17 @@
 >
 >Solution:
 >>      with task as (
->>
 >>                     select *,
->>
 >>                           lag(amount_rur) over (partition by customer_id
->>
 >>                                                 order by transaction_dttm
->>
 >>                                                                          ) as lag_amount,
->>
 >>                           lead(amount_rur) over (partition by customer_id
->>
 >>                                                  order by transaction_dttm
->>
 >>                                                                        ) as lead_amount
->>
 >>                    from interview.TRANSACTION_TIN
->>
 >>                    where success_flg IS TRUE
->>
 >>                                              )
->>
 >>         select transaction_id, customer_id
->>
 >>         from task
->>
 >>         where amount_rur > lag_amount and amount_rur > lead_amount
                                       
