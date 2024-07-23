@@ -74,15 +74,17 @@
 >
 >The following table is given:
 >
->Table TRANSACTION_TIN:
-
-Column            Data type   Description
-transaction_id    int         Transaction ID
-customer_id       int         Client ID
-amount_rur        float       Transaction amount in Russian rubles
-transaction_dttm  datetime    Date and time of transaction
-success_flg       bool        Successful transaction flag (TRUE)
-The tables are in interview.ACCOUNT_TIN.
+>>Table TRANSACTION_TIN:
+>>
+| Column | Data type | Description |
+|--- | ---| ---|
+|transaction_id | int | Transaction ID |
+|customer_id | int | Client ID |
+| amount_rur | float | Transaction amount in Russian rubles |
+| transaction_dttm | datetime | Date and time of transaction |
+| success_flg | bool | Successful transaction flag (TRUE) |
+>>
+>>The tables are in interview scheme.
 >
 >Task:
 >>It is necessary to make a report on clients whose successful transactions exceed the amount of 100 thousand rubles. The report should contain customer identifiers (customer_id) and the sum of their successful transactions in Russian rubles (amount_rur). A successful transaction is considered to be one where the success_flg flag value is TRUE. Sort the result by the client identifier (customer_id).
@@ -107,3 +109,49 @@ The tables are in interview.ACCOUNT_TIN.
 >>                                                    having sum(amount_rur) > 100000)
 >>
 >>      order by customer_id
+>> 
+**5. [Tinkoff] First transaction**
+>
+>The following tables are given:
+>
+>>Table TRANSACTION_TIN:
+>>
+| Column | Data type | Description |
+|--- | ---| ---|
+| transaction_id | int | Transaction ID |
+| customer_id | int | Client ID |
+| amount_rur | float | Transaction amount in Russian rubles |
+| transaction_dttm | datetime | Date and time of transaction |
+| success_flg | bool | Successful transaction flag (TRUE) |
+>>
+>>Table CUSTOMER_TIN:
+| Column | Data type | Description |
+|--- | ---| ---|
+| customer_id | int | Client ID |
+| name | varchar | Client name |
+| start_dttm | datetime | Date and time of client service start |
+| birth_dt | date | Client birth date |
+>>
+>>The tables are in interview.ACCOUNT_TIN.
+>
+>Task:
+>>Generate the date of the first transaction for customers who arrived in 2023.
+>>
+>>Columns as a result
+>>>customer_id
+>>>
+>>>transaction_dt (data type datetime)
+>
+>Solution:
+>>      select t.customer_id, min(t.transaction_dttm) as transaction_dt
+>>
+>>      from interview.TRANSACTION_TIN t
+>>
+>>      join interview.CUSTOMER_TIN c on t.customer_id = c.customer_id
+>>
+>>      where extract(year from c.start_dttm) = 2023 and t.success_flg is TRUE
+>>
+>>      group by t.customer_id
+>>
+>>      order by t.customer_id
+
