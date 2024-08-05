@@ -1,0 +1,2 @@
+Data is the backbone of decision-making in the digital age! If you’re ready to dive into the world of data management, this INTRO TO DATA MOOC SPRINT is perfect for you. Each week, you’ll get an overview of essential SQL concepts and build a solid foundation to expand your knowledge further. From understanding databases and basic syntax to mastering commands, normalisation, keys, joins, and data aggregation, this course could be the first step in your journey to becoming a data expert!
+
