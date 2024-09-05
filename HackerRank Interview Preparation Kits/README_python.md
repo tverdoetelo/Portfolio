@@ -42,3 +42,32 @@
           print(f'{proportion_positive:.5f}')
           print(f'{proportion_negative:.5f}')
           print(f'{proportion_zero:.5f}')
+
+**2. Mini-Max Sum**
+>
+>Task:
+>>Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+>>
+>>Input Format
+>>
+>>>A single line of five space-separated integers.
+>>>
+>>Output Format
+>>
+>>>Print two space-separated long integers denoting the respective minimum and maximum values that can be calculated by summing exactly four of the five integers. (The output can be greater than a 32 bit integer.)
+>>>>
+>>>![image](https://github.com/user-attachments/assets/ed337019-0f37-4143-aec3-d9049860370e)
+
+>Solution:
+>>     def miniMaxSum(arr):
+         min=arr[0]
+         max=arr[0]
+         for i in arr:
+             if i<min:
+                  min=i
+             if i>max:
+                 max=i
+         minsum = sum(arr)-max
+         maxsum = sum(arr)-min  
+         print(minsum,maxsum)   
+
